@@ -1,4 +1,4 @@
-from infrastructure.config import AppEnv
+from src.infrastructure.config import AppEnv
 
 
 class RedisConfig:

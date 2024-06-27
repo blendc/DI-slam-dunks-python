@@ -6,9 +6,9 @@ import sentry_sdk
 from celery import Celery
 from celery.signals import celeryd_init
 from sentry_sdk.integrations.celery import CeleryIntegration
-from infrastructure import settings
+from src.infrastructure import settings
 
-from infrastructure.settings import APP_ENV
+from src.infrastructure.settings import APP_ENV
 
 logger = logging.getLogger(__name__)
 
