@@ -22,11 +22,6 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-4. Deactivate the virtual environment when done:
-```bash
-deactivate
-```
-
 ## Quick Start
     Start Docker Desktop:
    - Open Docker.app from Applications
@@ -39,8 +34,8 @@ docker-compose up
 
 The application will be available at:
 - API: http://localhost:8000
-<!-- - Database: localhost:5432 -->
-<!-- - Redis: localhost:6379 -->
+# - Database: localhost:5432
+# - Redis: localhost:6379
 - Flower (Celery monitoring): http://localhost:5555
 
 
