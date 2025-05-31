@@ -1,6 +1,20 @@
-# Python DI Snippet Slam
 
-Welcome to the Python DI Snippet Slam repository! This is a collection of dependency injection (DI) snippets implemented in Python, designed to showcase various DI patterns and techniques.
+## Quick Start
+    Start Docker Desktop:
+   - Open Docker.app from Applications
+   - Wait for it to start (whale icon in menu bar)
+
+3. Run the application:
+```bash
+docker-compose up
+```
+
+The application will be available at:
+- API: http://localhost:8000
+<!-- - Database: localhost:5432 -->
+<!-- - Redis: localhost:6379 -->
+- Flower (Celery monitoring): http://localhost:5555
+
 
 ## About
 

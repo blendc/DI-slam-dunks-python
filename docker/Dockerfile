@@ -1,5 +1,6 @@
 FROM python:3.10-slim-buster
 ENV PYTHONUNBUFFERED=1
+ENV PYTHONPATH=/src
 
 COPY requirements.txt /tmp/
 RUN  pip install -r /tmp/requirements.txt

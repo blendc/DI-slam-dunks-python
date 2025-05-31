@@ -1,4 +1,4 @@
-alembic
+alembic==1.12.1
 amqp
 anyio
 asgiref
@@ -9,9 +9,9 @@ click
 click-didyoumean
 click-plugins
 click-repl
-dependency-injector
+dependency-injector==4.41.0
 Deprecated
-fastapi
+fastapi==0.104.1
 greenlet
 h11
 idna
@@ -22,8 +22,11 @@ numpy
 packaging
 pandas
 prompt-toolkit
-psycopg2-binary
-pydantic
+psycopg2-binary==2.9.9
+pydantic==2.5.2
+pydantic[email]
+python-jose[cryptography]
+passlib[bcrypt]
 python-multipart
 pyjwt
 pyparsing
@@ -35,10 +38,10 @@ redis
 requests
 six
 sniffio
-SQLAlchemy
+SQLAlchemy==2.0.23
 starlette
 typing_extensions
-uvicorn
+uvicorn==0.24.0
 vine
 wcwidth
 wrapt

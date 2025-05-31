@@ -1,58 +1,16 @@
-version: '3.9'
-
 services:
-
   web:
     build:
       context: .
       dockerfile: docker/Dockerfile
-    depends_on:
-      - db
-    env_file:
-      - envs/some.env
     volumes:
       - ./src:/src
     ports:
       - "8000:80"
-
-  db:
-    image: postgres
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
     environment:
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_USER: postgres
-      POSTGRES_DB: DI
-    ports:
-      - "5432:5432"
+      - REDIS_URL=redis://redis:6379/0
 
   redis:
     image: redis:alpine
     ports:
       - "6379:6379"
-
-  celery:
-    build:
-      context: .
-      dockerfile: config/celery/Dockerfile
-    depends_on:
-      - redis
-    env_file:
-      - envs/some.env
-    volumes:
-      - ./src:/src
-
-  flower:
-    image: mher/flower
-    environment:
-      - CELERY_BROKER_URL=redis://redis:6379/0
-    ports:
-      - "5555:5555"
-    restart: unless-stopped
-    depends_on:
-      - celery
-      - redis
-
-
-volumes:
-  postgres_data:
