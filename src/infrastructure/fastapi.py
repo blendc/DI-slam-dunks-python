@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from infrastructure import settings
+from src.infrastructure import settings
 
 app = FastAPI(
     debug=settings.DEBUG,

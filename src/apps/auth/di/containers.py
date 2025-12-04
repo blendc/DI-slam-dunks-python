@@ -1,6 +1,6 @@
 from dependency_injector import containers, providers
-from ...adapters.repositories.user import SQLAlchemyUserRepository
-from ...domain.use_cases.get_current_user import GetCurrentUserUseCase
+from ..adapters.repositories.user import SQLAlchemyUserRepository
+from ..domain.use_cases.get_current_user import GetCurrentUserUseCase
 from src.infrastructure.db import Database
 
 
@@ -9,7 +9,7 @@ class AuthPackage(containers.DeclarativeContainer):
     
     user_repository = providers.Factory(
         SQLAlchemyUserRepository,
-        session=database.session
+        session=database.provided.session
     )
 
     get_current_user_use_case = providers.Factory(

@@ -1,6 +1,6 @@
 import os
 
-from infrastructure.config import AppEnv
+from src.infrastructure.config import AppEnv
 
 APP_ENV = os.getenv('APP_ENV', AppEnv.DEV.value)
 SENTRY_DSN = os.getenv('SENTRY_DSN')

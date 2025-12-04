@@ -1,7 +1,7 @@
 from typing import Optional
 from ...domain.entities.user import User
 from ...domain.ports.user_repository import UserRepository
-from apps.common.domain.ports.use_case import UseCasePort
+from src.apps.common.domain.ports.use_case import UseCasePort
 
 
 class GetCurrentUserUseCase(UseCasePort[int, Optional[User]]):

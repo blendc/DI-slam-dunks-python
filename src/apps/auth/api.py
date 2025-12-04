@@ -1,9 +1,9 @@
 from dependency_injector.wiring import Provide, inject
 from fastapi import APIRouter, Depends
 
-from apps.auth.utils import verify_token
-from apps.common.domain.ports.use_case import UseCasePort
-from apps.common.utils.api import Request
+from src.apps.auth.utils import verify_token
+from src.apps.common.domain.ports.use_case import UseCasePort
+from src.apps.common.utils.api import Request
 from src.containers import AppContainer
 
 router = APIRouter()

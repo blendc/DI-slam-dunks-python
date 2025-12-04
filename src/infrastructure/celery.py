@@ -21,8 +21,7 @@ sentry_sdk.init(
     integrations=[
         CeleryIntegration(),
     ],
-    request_bodies="medium",
-    with_locals=True,
+
     environment=f"{APP_ENV}.DI",
     send_default_pii=True,
 )

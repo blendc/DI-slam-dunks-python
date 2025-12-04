@@ -1,9 +1,9 @@
 from dependency_injector import containers, providers
 from sqlalchemy.engine import make_url
-from apps.auth.di.containers import AuthPackage
-from infrastructure.celery import CeleryApp
-from infrastructure.config import get_postgres_uri
-from infrastructure.db import Database
+from src.apps.auth.di.containers import AuthPackage
+from src.infrastructure.celery import CeleryApp
+from src.infrastructure.config import get_postgres_uri
+from src.infrastructure.db import Database
 
 
 class AppContainer(containers.DeclarativeContainer):
