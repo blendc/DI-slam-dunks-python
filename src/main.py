@@ -4,9 +4,8 @@ from src.containers import AppContainer
 
 app = FastAPI(title="DI Slam Dunks")
 
-# Configure dependency injection
+
 container = AppContainer()
 container.wire(modules=[__name__])
 
-# Include routers
 app.include_router(auth_router, prefix="/auth") 
