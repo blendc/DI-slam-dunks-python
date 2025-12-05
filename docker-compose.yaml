@@ -9,6 +9,29 @@ services:
       - "8000:80"
     environment:
       - REDIS_URL=redis://redis:6379/0
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+
+  celery:
+    build:
+      context: .
+      dockerfile: config/celery/Dockerfile
+    volumes:
+      - ./src:/src
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - APP_ENV=DEV
+      - DB_HOST=${DB_HOST:-localhost}
+      - DB_USER=${DB_USER:-postgres}
+      - DB_PASSWORD=${DB_PASSWORD:-postgres}
+      - DB_NAME=${DB_NAME:-di_db}
+      - SENTRY_DSN=${SENTRY_DSN:-}
+    depends_on:
+      - redis
 
   redis:
     image: redis:alpine
