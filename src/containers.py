@@ -4,6 +4,7 @@ from src.apps.auth.di.containers import AuthPackage
 from src.infrastructure.celery import CeleryApp
 from src.infrastructure.config import get_postgres_uri
 from src.infrastructure.db import Database
+from src.infrastructure.cache import RedisCache
 
 
 class AppContainer(containers.DeclarativeContainer):
@@ -23,10 +24,12 @@ class AppContainer(containers.DeclarativeContainer):
     )
     database = providers.Singleton(Database, db_url)
     celery_app = providers.Singleton(CeleryApp)
+    cache = providers.Singleton(RedisCache)
 
     auth_package = providers.Container(
         AuthPackage,
-        database=database
+        database=database,
+        cache=cache
     )
 
 
