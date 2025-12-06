@@ -1,4 +1,4 @@
-FROM python:3.10.12-slim-buster as builder
+FROM python:3.10-slim-bookworm as builder
 ENV PYTHONUNBUFFERED=1
 COPY requirements.txt /tmp/
 RUN pip install -r /tmp/requirements.txt
